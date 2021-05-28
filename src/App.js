@@ -1,7 +1,9 @@
+import React from "react"
 import Gradients from "./components/Gradients"
 import GradientsHeader from "./components/GradientsHeader"
 import Footer from "./components/Footer"
-import {FilterContextProvider} from './context/FilterContext'
+import { FilterContextProvider } from './context/FilterContext'
+import gradientsReducer from './reducers/gradientsReducer'
 
 function App() {
   return (
@@ -14,9 +16,9 @@ function App() {
         <h1 className="text-center my-4">Alyra Gradients</h1>
 
         <FilterContextProvider>
-        <Gradients />
+          <gradientsReducer />
         </FilterContextProvider>
-        
+
       </main>
       <Footer />
     </div>

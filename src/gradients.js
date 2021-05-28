@@ -1,5 +1,7 @@
+
 export const gradients = [
   {
+
     name: "Grade Grey",
     start: "rgb(189, 195, 199)",
     end: "rgb(44, 62, 80)",
@@ -151,6 +153,8 @@ export const gradients = [
   },
 ]
 
+
+
 function allTags(list) {
   /* retourner la liste des tags uniques */
   let listTotal = []
@@ -169,4 +173,6 @@ function allTags(list) {
   return listTagsUnique
 }
 
+
 export const uniqueTags = allTags(gradients)
+

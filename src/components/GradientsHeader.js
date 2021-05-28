@@ -1,12 +1,14 @@
-import { useState } from "react"
-import { gradients as list } from "../gradients"
+import {  useState } from "react"
 import { ReactComponent as SvgToggle } from "bootstrap-icons/icons/arrow-clockwise.svg"
 import { ReactComponent as Next } from "bootstrap-icons/icons/arrow-right.svg"
 import { ReactComponent as Prev } from "bootstrap-icons/icons/arrow-left.svg"
+import { FilterContext } from "../context/FilterContext"
 
 const GradientsHeader = (props) => {
-  const { children } = props
-  const length = list.length
+  const {children} = props;
+  const {gradients: list} = FilterContext()
+  //const list = gradientsList
+  const length = list.length;
 
   const chooseGradient = () => Math.floor(Math.random() * length)
 
@@ -21,11 +23,12 @@ const GradientsHeader = (props) => {
     setRandomGradient(randomGradient === 0 ? length - 1 : randomGradient - 1)
   }
 
+
   const style = {
-    backgroundImage: `linear-gradient(to right, ${list[randomGradient].start}, ${list[randomGradient].end})`
+    backgroundImage: `linear-gradient(to right, ${list[randomGradient]?.start}, ${list[randomGradient]?.end})`
   }
   return (
-    <header className="text-center bg-dark text-white py-5 mb-5" style={style}>
+    <header className="text-center bg-dark text-white py-5 mb-5" style={list.length > 0 ? style : {backgroundColor: 'black'} }>
       {children}
       <button
         aria-label="Clicker pour afficher le dégradé précédant"

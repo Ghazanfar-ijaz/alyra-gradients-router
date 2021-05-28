@@ -13,9 +13,10 @@ const GradientsList = () => {
     return el.tags.includes(filter)
   })
   return (
+    <>
     <ul className="row list-unstyled">
       {list.map((el) => {
-        const { name, start, end, tags = [] } = el
+        const { name, start, end, tags, id = [] } = el
         return (
           <Gradient
             key={name}
@@ -23,11 +24,14 @@ const GradientsList = () => {
             colorEnd={end}
             name={name}
             tags={tags}
+            key={id}
+            id={id}
          
           />
         )
       })}
     </ul>
+    </>
   )
 }
 
