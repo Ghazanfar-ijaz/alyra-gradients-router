@@ -1,7 +1,7 @@
-import { useState, useReducer, useEffect } from "react"
+//import { useState, useReducer, useEffect } from "react"
 import GradientsList from "./GradientsList"
 import GradientsSelect from "./GradientsSelect"
-import { gradientsReducer } from "../reducers/gradientsReducer"
+//import { gradientsReducer } from "../reducers/gradientsReducer"
 
 
 const Gradients = () => {

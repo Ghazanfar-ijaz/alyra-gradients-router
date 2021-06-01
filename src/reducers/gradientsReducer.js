@@ -1,4 +1,3 @@
-
 export const gradientsReducer = (state, action) => {
   // FETCH_INIT, FETCH_SUCCESS, FETCH_FAILURE
   switch (action.type) {

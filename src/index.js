@@ -4,11 +4,15 @@ import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
+import {BrowserRouter as Router} from 'react-router-dom';
+import {FilterContextProvider} from "./context/FilterContext"
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
+    <FilterContextProvider>
     <App />
-  </React.StrictMode>,
+    </FilterContextProvider>
+  </Router>,
   document.getElementById("root")
 )
 
